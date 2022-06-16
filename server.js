@@ -2,7 +2,6 @@ require("dotenv").config({ path: "config.env" });
 const express = require("express");
 const morgan = require("morgan");
 const axios = require("axios");
-//import path from "path";
 const app = express();
 const Userdb = require("./core/models/user");
 
@@ -23,11 +22,8 @@ app.use('/img', express.static('assets/img'));
 app.use('/js', express.static('assets/js'));
 
 
-//import { homeRoutes, add_user, update_user } from './core/services/render';
-//import service from './core/services/render';
-//const controller = require('./core/controllers/controller');
 
-
+app.use('/api', require('./core/routes/user'));
 app.get('/', (req, res) => {
   // Make a get request to /api/users
   axios.get('http://localhost:3000/api/users')
@@ -64,8 +60,6 @@ app.get('/update-user', (req, res) => {
       res.send(err);
     })
 })
-// API
-app.use('/api', require('./core/routes/user'));
 
 
 
