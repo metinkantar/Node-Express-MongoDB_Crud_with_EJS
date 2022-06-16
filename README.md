@@ -11,6 +11,6 @@ Add New User & Yeni Kullanıcı Ekle
 
 User Update & Kullanıcı Güncelleme
 
-![User Update](screenshot/updateUser.png)
+![User Update](screenshot/userUpdate.png)
 
 
