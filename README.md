@@ -2,6 +2,6 @@
 
 Home Page & Ana Sayfa
 
-![Home Page](home.png)
+![Home Page](screenshot/home.png)
 
 
