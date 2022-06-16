@@ -1,0 +1,19 @@
+{
+  "name": "mekacode_node-express-mongodb_crud",
+  "version": "1.0.0",
+  "description": "MeKaCoDe | CRUD Application with Node JS, Express & MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "express",
+    "mongodb",
+    "crud"
+  ],
+  "author": "MeKaCoDe",
+  "license": "ISC"
+}

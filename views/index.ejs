@@ -1,0 +1,57 @@
+<!-- include header -->
+<%- include('./include/header') %>
+
+  <main id="site-main">
+    <div class="container h-100">
+      <div class="main-title d-flex justify-content-center">
+        <div class="text-center fw-bold mb-3 fs-3"><i class="fas fa-user"></i>&nbsp; Users List & Kullanıcılar Listesi </div>
+      </div>
+  
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name & İsim</th>
+            <th>@Email</th>
+            <th>Gender & Cinsiyet</th>
+            <th>Status & Durum</th>
+            <th>Action & Eylem</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < users.length; i++) { %>
+            <tr>
+              <td>
+                <%= i + 1 %>
+              </td>
+              <td>
+                <%= users[i].name %>
+              </td>
+              <td>
+                <%= users[i].email %>
+              </td>
+              <td>
+                <%= users[i].gender %>
+              </td>
+              <td>
+                <%= users[i].status %>
+              </td>
+              <td>
+                <a href="/update-user?id=<%= users[i]._id%>" class="btn border-shadow update">
+                  <span class="badge bg-warning"><i class="fas fa-pencil-alt"></i></span>
+                </a>
+                <a class="btn border-shadow delete" data-id="<%=users[i]._id%>" href="api/userdelete?id=<%=users[i]._id%>" >
+                  <span class="badge bg-danger"><i class="fas fa-times"></i></span>
+                </a>
+              </td>
+            </tr>
+            <% } %>
+        </tbody>
+      </table>
+    </div>
+   <br />
+   <br />
+  </main>
+  
+  <!-- İnclude Footer-->
+  <%- include('./include/footer') %>

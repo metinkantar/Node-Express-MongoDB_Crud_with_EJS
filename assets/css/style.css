@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pirata+One|Rubik:900');
+
+:root {
+    --dark: #2b2d42;
+    --light: #adb5bd;
+    --border: #dee2e6;
+    --border-btn: #edf2f4;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+}
+.text-gradient {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.meka-text-effect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #141E30;
+    background: linear-gradient(to right, #24243e, #141E30, #0f0c29);
+
+}
+.meka-text-effect-title {
+    margin-bottom: .125em;
+    font-family: 'Barlow', sans-serif;
+    font-size: 2rem;
+    color: #E4E5E6;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.meka-text-effect-title {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    background: linear-gradient(to right, #5f5faf, #2d4064, #251e63);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.meka-text-effect-title:before,
+.meka-text-effect-title:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.meka-text-effect-title:before {
+    z-index: -1;
+    text-shadow: -0.001em -0.001em 1px rgba(255, 255, 255, .15)
+}
+.meka-text-effect-title:after {
+    z-index: -2;
+    text-shadow: 20px 20px 20px rgba(0, 0, 0, .5), 20px 20px 20px rgba(0, 0, 0, .4), 30px 30px 30px rgba(0, 0, 0, .1);
+    mix-blend-mode: multiply;
+}
+table {
+    border-spacing: 0px;
+    width: 100%;
+}
+.table td,
+.table th {
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+.table td>a.btn {
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0 .2em;
+}
+.table tr:hover {
+    background-color: #06d6a0;
+}
+.table tr:hover td>a {
+    box-shadow: none;
+}
+.table .thead-dark th {
+    color: #fff;
+    background-color: var(--dark);
+    border-color: #32383e;
+}
+@media only screen and (max-width: 1024px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid var(--border);
+    }
+
+    td {
+        border: none;
+        position: relative;
+    }
+
+}
+#site-main {
+    margin-top: 5.2rem;
+}
+/*  add user & update user template */
+.form-title {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.new_user {
+    max-width: 786px;
+    margin: auto;
+}
+/* adding style to radio buttons */
+.radio input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+}
+.radio input[type='radio']+.radio-label:before {
+    content: "";
+    background: var(--border-btn);
+    border-radius: 100%;
+    border: 1px solid var(--border);
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: -0em;
+    margin-right: .5em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+.radio input[type='radio']:checked+.radio-label:before {
+    background-color: #16db93;
+    box-shadow: inset 0 0 0 4px #e9ecef;
+}
+.radio input[type='radio']:focus+.radio-label:before {
+    outline: none;
+    border-color: #16db93;
+}
+.radio input[type='radio']:disabled+.radio-label:before {
+    box-shadow: inset 0 0 0 4px #e9ecef;
+    border-color: #b4b4b4;
+    background: #b4b4b4;
+}
+#update_user .form-group .btn,
+#add_user .form-group .btn {
+    width: 100%;
+    padding: .9em 1em;
+    background-color: #f3d034;
+    border: none;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: .2em;
+    margin: .5em 0;
+}
+#update_user .form-group .btn:hover,
+#add_user .form-group .btn:hover {
+    background-color: var(--dark);
+    color: var(--border);
+}
+.mekacode-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+.link {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+}
+.link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+.add-user-link {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+}
